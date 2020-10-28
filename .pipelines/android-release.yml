@@ -27,7 +27,7 @@ steps:
    sudo ${ANDROID_HOME}/tools/bin/sdkmanager --verbose --install "ndk;21.0.6113669"
   displayName: 'Get NDK (TODO: Remove this step)'
 
-- task: Gradle@2
+- task: Gradle@1
   displayName: build
   inputs:
     gradleWrapperFile: source/android/gradlew
@@ -35,7 +35,7 @@ steps:
     tasks: 'adaptivecards:build'
     publishJUnitResults: false
 
-- task: Gradle@2
+- task: Gradle@1
   displayName: 'publish'
   inputs:
     gradleWrapperFile: source/android/gradlew
